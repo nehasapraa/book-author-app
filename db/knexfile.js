@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
 
   development: {
@@ -10,6 +11,12 @@ module.exports = {
       password: ''
     },
     debug: true,
+    seeds: {
+      directory: __dirname + '/seed-data/development'
+    },
+    migrations: {
+      directory:  __dirname + '/migrations',
+    }
   },
 
   test: {
@@ -22,6 +29,12 @@ module.exports = {
         password: ''
       },
       debug: true,
+      seeds: {
+        directory: __dirname + '/seed-data/development'
+      },
+      migrations: {
+        directory:  __dirname + '/migrations',
+      }
   },
 
   production: {
@@ -39,5 +52,6 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   }
+
 
 };

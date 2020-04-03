@@ -1,9 +1,12 @@
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import logger from 'morgan';
 
-import indexRouter from './routes/index';
+import logger from 'morgan';
+import dotenv from 'dotenv';
+dotenv.config();
+
+import indexRouter from './routes/api/v1/index';
 
 var app = express();
 

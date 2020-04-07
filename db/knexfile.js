@@ -1,4 +1,6 @@
 require('dotenv').config();
+const path = require('path');
+
 module.exports = {
 
   development: {
@@ -12,10 +14,10 @@ module.exports = {
     },
     debug: true,
     seeds: {
-      directory: __dirname + '/seed-data/development'
+      directory: path.join(__dirname , '/seed-data/development')
     },
     migrations: {
-      directory:  __dirname + '/migrations',
+      directory:  path.join(__dirname , '/migrations'),
     }
   },
 

@@ -1,12 +1,25 @@
-import Bookshelf from '../../db/bookshelf';
-import Author from './Author';
+const { Model }  = require('objection')
+import db from '../../db/db'
+import Author from './Author'
 
-class Book extends Bookshelf.Model{
-  get tableName() {
+Model.knex(db)
+
+class Book extends Model{
+  static get tableName() {
     return 'books';
-  };
-  author() {
-    return this.belongsTo('Author', 'author_id');
-  };
-};
-export default Bookshelf.model('Book', Book);
+  }
+
+  static get relationMappings() {
+    return {
+      author: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: Author,
+        join: {
+          from: 'books.author_id',
+          to: 'author.id'
+        }
+      }
+    }
+  }
+}
+module.exports = Book;

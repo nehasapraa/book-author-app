@@ -21,11 +21,6 @@ class DbService {
     );
   }
 
-  async search(term) {
-    const results = await elasticsearch.search(term);
-    return results;
-  }
-
   async insert(book){
     let bookCreated;
     try {

@@ -1,4 +1,5 @@
 import db from './db.service';
+import searchService from './elasticsearch.service';
 
 class BookService {
   all() {
@@ -8,7 +9,7 @@ class BookService {
     return  db.insert(book);
   }
   search(term) {
-    return  db.search(term);
+    return  searchService.search(term);
   }
 }
 

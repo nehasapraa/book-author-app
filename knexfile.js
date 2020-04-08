@@ -32,10 +32,10 @@ module.exports = {
       },
       debug: true,
       seeds: {
-        directory: __dirname + '/db/seed-data/development'
+        directory: path.join(__dirname , '/db/seed-data/development')
       },
       migrations: {
-        directory:  __dirname + '/db/migrations'
+        directory:  path.join(__dirname , '/db/migrations')
       }
   },
 

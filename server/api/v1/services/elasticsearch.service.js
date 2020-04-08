@@ -31,5 +31,4 @@ class ElasticsearchService {
            })
     }
 }
-
 export default new ElasticsearchService();

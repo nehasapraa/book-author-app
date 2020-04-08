@@ -3,7 +3,7 @@ import BookService from '../services/book.service';
 export class BookController {
   all(req, res) {
     if(req.query.q) {
-      BookService.search(req.query).then(r => res.json(r.hits.hits));
+      BookService.search(req.query).then(r => res.json(r));
     } else {
       BookService.all().then(r => res.json(r));
     }

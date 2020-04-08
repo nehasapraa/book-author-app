@@ -14,10 +14,10 @@ module.exports = {
     },
     debug: true,
     seeds: {
-      directory: path.join(__dirname , '/seed-data/development')
+      directory: path.join(__dirname , '/db/seed-data/development')
     },
     migrations: {
-      directory:  path.join(__dirname , '/migrations'),
+      directory:  path.join(__dirname , '/db/migrations')
     }
   },
 
@@ -32,10 +32,10 @@ module.exports = {
       },
       debug: true,
       seeds: {
-        directory: __dirname + '/seed-data/development'
+        directory: __dirname + '/db/seed-data/development'
       },
       migrations: {
-        directory:  __dirname + '/migrations',
+        directory:  __dirname + '/db/migrations'
       }
   },
 

@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "test": "./node_modules/.bin/mocha --require @babel/register --exit",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require @babel/register --exit",
     "build": "npm-run-all clean transpile",
     "server": "node ./build/bin/www",
     "dev": "pm2-dev start config/dev-config.json",
     "transpile": "babel ./server --out-dir build",
     "clean": "rimraf build",
     "watch:dev": "nodemon",
-    "db:migrate": "knex --knexfile db/knexfile.js migrate:latest",
-    "db:seed": "knex --knexfile db/knexfile.js seed:run",
+    "db:migrate": "knex --knexfile knexfile.js migrate:latest",
+    "db:seed": "knex --knexfile knexfile.js seed:run",
     "test:debug": "mocha --require @babel/register --inspect-brk --exit",
     "lint": "eslint -c .eslintrc.json {server,test}/**",
     "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"

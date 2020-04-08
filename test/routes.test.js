@@ -1,10 +1,9 @@
-// test file for book api's
 process.env.NODE_ENV = 'test'
+import knex from '../db/db'
 import chai from 'chai'
 import request from 'supertest'
-import knex from '../db/db'
 
-import Server from '../server/api/v1/routes';
+import Server from '../server/app';
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect
@@ -29,7 +28,6 @@ describe('Books', () => {
         done()
       })
   })
-//request(app.use(routes)).get('/').end()
  it('should return all books', (done) => {
        chai.request(Server)
        .get('/books')
@@ -39,4 +37,14 @@ describe('Books', () => {
        done();
        });
      });
+
+ it('should return all authors', (done) => {
+        chai.request(Server)
+        .get('/authors')
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+          expect(res.body.length).to.equal(2);
+        done();
+        });
+      });
 })

@@ -1,6 +1,5 @@
 import Book from '../../../models/Book';
 import Author from '../../../models/Author';
-import knex from '../../../../db/db';
 
 import elasticsearch from './elasticsearch.service';
 

@@ -1,7 +1,7 @@
 const { Model } = require('objection');
-import db from '@db/db'
+import db from '@db/db';
 
-Model.knex(db)
+Model.knex(db);
 
 class Author extends Model {
   static get tableName() {
@@ -16,10 +16,10 @@ class Author extends Model {
         modelClass: Book,
         join: {
           from: 'author.id',
-          to:  'books.author_id'
-        }
-      }
-    }
+          to: 'books.author_id',
+        },
+      },
+    };
   }
 }
 module.exports = Author;

@@ -2,7 +2,7 @@ import db from './db.service';
 
 class AuthorService {
   all() {
-   return db.authors();
+    return db.authors();
   }
 }
 

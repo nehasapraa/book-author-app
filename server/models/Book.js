@@ -1,10 +1,10 @@
-const { Model }  = require('objection')
-import db from '@db/db'
-import Author from './Author'
+const { Model } = require('objection');
+import db from '@db/db';
+import Author from './Author';
 
-Model.knex(db)
+Model.knex(db);
 
-class Book extends Model{
+class Book extends Model {
   static get tableName() {
     return 'books';
   }
@@ -16,10 +16,10 @@ class Book extends Model{
         modelClass: Author,
         join: {
           from: 'books.author_id',
-          to: 'author.id'
-        }
-      }
-    }
+          to: 'author.id',
+        },
+      },
+    };
   }
 }
 module.exports = Book;

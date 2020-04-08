@@ -6,10 +6,10 @@ class BookService {
     return db.books();
   }
   create(book) {
-    return  db.insert(book);
+    return db.insert(book);
   }
   search(term) {
-    return  searchService.search(term);
+    return searchService.search(term);
   }
 }
 

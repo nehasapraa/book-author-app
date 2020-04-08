@@ -1,10 +1,10 @@
 import express from 'express';
 
-import BookController from './Controllers/BookController';
-import AuthorController from './Controllers/AuthorController';
+import BookController from './controllers/BookController';
+import AuthorController from './controllers/AuthorController';
 
 export default express
   .Router()
   .post('/books', BookController.create)
   .get('/books', BookController.all)
-  .get('/authors', AuthorController.all)
+  .get('/authors', AuthorController.all);

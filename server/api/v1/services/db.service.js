@@ -1,5 +1,5 @@
-import Book from '../../../models/Book';
-import Author from '../../../models/Author';
+import Book from '@app/models/Book';
+import Author from '@app/models/Author';
 
 import elasticsearch from './elasticsearch.service';
 

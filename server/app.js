@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import 'module-alias/register';
 
 import logger from 'morgan';
 import dotenv from 'dotenv';

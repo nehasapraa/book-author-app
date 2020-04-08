@@ -1,5 +1,5 @@
 const { Model }  = require('objection')
-import db from '../../db/db'
+import db from '@db/db'
 import Author from './Author'
 
 Model.knex(db)
